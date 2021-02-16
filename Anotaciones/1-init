@@ -1,0 +1,16 @@
+Para comenzar un proyecto con strapi utilizamos el comando 
+   npx create-strapi-app server
+   seleccion de opciones de configuración:
+   instalación custom para seleccionar una BD especifica
+   :database name > ecommerce
+   :host > ecommerce-next.qmsej.mongodb.net
+   :srv > true
+   :port > 27017
+   :username > admin
+   :password > SdDiwLC4ce9gr0SE
+   :Authentication > Enter
+   :Enable SSL > y
+
+  Con esa configuración inicial bastaria para crear el proyecto.
+
+  
