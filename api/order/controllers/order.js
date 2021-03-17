@@ -23,9 +23,9 @@ module.exports = {
     });
 
     // realiza el pago generado por el usuario
-    const charge = await stripe.charge.create({
-      amount: totalPayment * 100,
-      currency: "ars",
+    const charge = await stripe.charges.create({
+      amount: totalPayment.toFixed(2) * 100,
+      currency: "usd",
       source: token.id,
       description: `ID de usuario: ${idUser}`,
     });
@@ -35,13 +35,13 @@ module.exports = {
     for await (const product of products) {
       const data = {
         game: product.id,
-        user: idUser,
+        users_permissions_user: idUser,
         totalPayment,
         idPayment: charge.id,
         addressShipping,
       };
       // validación de los datos a guardar en la BD
-      const validData = await strapi.entityValidator.validateEntity(
+      const validData = await strapi.entityValidator.validateEntityCreation(
         strapi.models.order,
         data
       );
