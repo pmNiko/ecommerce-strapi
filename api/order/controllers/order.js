@@ -41,7 +41,7 @@ module.exports = {
         addressShipping,
       };
       // validación de los datos a guardar en la BD
-      const validData = await createStrapi.entityValidator.validateEntity(
+      const validData = await strapi.entityValidator.validateEntity(
         strapi.models.order,
         data
       );
